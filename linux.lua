@@ -1,19 +1,32 @@
+--[[
+ComputerCraft Linux - Codename Newrel
+
+Version - Newrel
+
+By LewisTehMinerz. DO NOT COPY (The only exception is for distro's)
+]]--
+
+local _G.cclinux = {
+  distro = "ComputerCraft Linux - Codename Newrel",
+  distroV = "Newrel",
+  defaults = true,
+}
+
 term.clear()
-term.setCursorPos( 1,1 )
-write( "CCLinux 0.1 load... " )
-if not fs.exists( ".linuxCC" ) then
-  term.setTextColor( colors.red )
-  write( "[ err ]" )
-  term.setTextColor( colors.white )
-  printError( "[ CCLINUX ] An error occured while trying to load CCLinux. A log file ( \"cclinuxerr.log\" ) has been created." )
-  i = fs.open( "cclinuxerr.log", "w" )
-  i.write( "[ CCLinux ] Ver = 0.1" )
-  i.write( "[ CCLinux ] Load [ err ]" )
-  i.write( "[ CCLinux ] Missing: \".linuxCC\" " )
-  i.close()
-  error( "[ CCLinux ] TERMINATED", 0 )
-else
-  term.setTextColor( colors.green )
-  write( "[ ok ]" )
-  term.setTextColor( colors.white )
+term.setCursorPos( 1, 1 )
+if not fs.exists( ".cclinux" ) then
+  print( "Welcome to CCLinux! This is usually an API for distro's, but, you don't need one to run CCLinux!" )
+  print( "This has very advanced commands, so it's better to get a distro off 'cclinux-dev.github.io/distros'!" )
+  print( "This installer will override the default shell with this. To uninstall, just write in the terminal (when running CCLinux) ':cclinux_uninstall'" )
+  print( "Options: ':yes' for yes, ':no' for no." )
+  write( "cclinux install$ " )
+  input = read()
+  if input = ":y" then
+    l = fs.open( ".cclinux", "w" )
+    l.write( "IGNORE ME" )
+    l.close()
+    print( "wrote .cclinux file" )
+    print( "writing shell..." )
+    
+  end
 end
