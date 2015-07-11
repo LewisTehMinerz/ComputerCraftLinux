@@ -21,7 +21,7 @@ if not fs.exists( ".cclinux" ) then
   print( "Options: ':yes' for yes, ':no' for no." )
   write( "cclinux install$ " )
   input = read()
-  if input = ":y" then
+  if input = ":yes" then
     l = fs.open( ".cclinux", "w" )
     l.write( "IGNORE ME" )
     l.close()
